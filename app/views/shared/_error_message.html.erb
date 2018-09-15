@@ -1,0 +1,12 @@
+<% if @post.errors.any? %>
+  <div>
+    <p><%= pluralsize(@post.errors.count, "error") %> prevented this post from saving </p>
+    <ul>
+      <%  @post.errors.full_message.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  </div>
+
+<% end %>
