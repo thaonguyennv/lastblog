@@ -1,0 +1,10 @@
+<%=  form_for Category.new do |f| %>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name, placeholder: "Type the name of Category here" %>
+  <br>
+
+
+  <%= f.submit  %>
+
+<% end %>

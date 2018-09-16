@@ -1,6 +1,6 @@
 <% if @posts.present? %>
   <% @posts.each do |post|%>
-    <h1><%= link_to "post_title", post %></h1>
+    <h1><%= link_to post.title, post %></h1>
     <p><%= post.content %></p>
   <% end %>  <!-- true -->
 <% end %>

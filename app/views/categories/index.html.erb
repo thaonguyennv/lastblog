@@ -1,0 +1,5 @@
+<% if @categories.present? %>
+  <% @categories.each do |category|%>
+    <h1><%= link_to category.try(:name), category %></h1>
+  <% end %>  <!-- true -->
+<% end %>

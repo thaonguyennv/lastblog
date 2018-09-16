@@ -4,16 +4,17 @@ class PostsController < ApplicationController
 
 
   def index
-    if params[:category].blank?
-    @post = Post.all.order("created_at DESC")
+    # if params[:category].blank?
+    # @post = Post.all.order("created_at DESC")
 
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @posts = Post.where(category_id: @category_id).order ("created_at DESC")
-    end
+    # else
+      # @category_id = Category.find_by(name: params[:category]).id
+      @posts = Post.all
+    # end
   end
   def show
     #code
+    @post=Post.find(params[:id])
   end
   def new
     @post = Post.new
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to_@post, notice: "The post was created sucessfully! <3"
+      redirect_to @post, notice: "The post was created sucessfully! <3"
       # flash[:success] = "The post was created!"
       # redirect_to_@post
     else
